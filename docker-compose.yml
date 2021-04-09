@@ -15,8 +15,7 @@ services:
       - --certificatesresolvers.leresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
       - --certificatesresolvers.le.acme.email=null@email.nowhere
       - --certificatesresolvers.leresolver.acme.storage=/acme.json
-      - --certificatesresolvers.leresolver.acme.dnschallenge.provider=route53
-      - --certificatesResolvers.leresolver.acme.dnsChallenge.resolvers="1.1.1.1:53,8.8.8.8:53"
+      - --certificatesresolvers.leresolver.acme.tlschallenge=true
     labels:
       - traefik.docker.network=web
     ports:
